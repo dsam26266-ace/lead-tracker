@@ -7,6 +7,12 @@ let leads = []
 const ul_el = document.getElementById("unorderlist-el");
 
 let myLeadsFromLocalStorage = JSON.parse(localStorage.getItem("names"));
+
+if(myLeadsFromLocalStorage){
+    leads = myLeadsFromLocalStorage
+    renderLeads()
+}
+
 console.log(myLeadsFromLocalStorage)
 
 save_btn_el.addEventListener("click",function(){
@@ -14,11 +20,7 @@ save_btn_el.addEventListener("click",function(){
     renderLeads()
 
     localStorage.setItem("names",JSON.stringify(leads))
-
     input_el.value = ""
-   
-    
-
 })
 
 function renderLeads(){
