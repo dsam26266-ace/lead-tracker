@@ -1,15 +1,24 @@
 
-const save_btn_el = document.getElementById("input-btn")
+const save_btn_el = document.getElementById("input-btn");
 
 const input_el = document.getElementById("input-el");
 let leads = []
 
-const ul_el = document.getElementById("unorderlist-el")
+const ul_el = document.getElementById("unorderlist-el");
+
+let myLeadsFromLocalStorage = JSON.parse(localStorage.getItem("names"));
+console.log(myLeadsFromLocalStorage)
 
 save_btn_el.addEventListener("click",function(){
     leads.push(input_el.value)
     renderLeads()
+
+    localStorage.setItem("names",JSON.stringify(leads))
+
     input_el.value = ""
+   
+    
+
 })
 
 function renderLeads(){
