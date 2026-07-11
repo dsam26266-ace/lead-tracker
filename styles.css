@@ -5,26 +5,23 @@ body{
     min-width:400px;
 }
 
-.main{
+.btn{
     display:flex;
-    flex-direction: column;
+    align-items: start;
+    justify-content: start;
 }
 
 #input-el{
     padding:10px 20px 10px 20px;
-
-    /* 
     width:100%;
     box-sizing:border-box;
-
-    */
 }
 
 #input-btn{
   margin-top: 10px;
   width:200px;
   font-size:20px;
-  font-weight: 500px;
+  font-weight: bold;
   padding:10px 20px 10px 20px;
   background: #5f9341;
   color:aliceblue;
@@ -32,6 +29,20 @@ body{
   border-radius: 6px;
 
 }
+
+#delete-btn{
+  margin-top: 10px;
+  width:200px;
+  font-size:20px;
+  font-weight: bold;
+  padding:10px 20px 10px 20px;
+  background: aliceblue;
+  color:#5f9341;
+  border:1px solid #5f9341;
+  border-radius: 6px;
+  margin-left:10px;
+}
+
 
 ul{
   list-style-type: none;

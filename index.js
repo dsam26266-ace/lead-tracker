@@ -5,15 +5,16 @@ const input_el = document.getElementById("input-el");
 let leads = []
 
 const ul_el = document.getElementById("unorderlist-el");
+const delete_el = document.getElementById("delete-btn");
 
-let myLeadsFromLocalStorage = JSON.parse(localStorage.getItem("names"));
+ const myLeadsFromLocalStorage = JSON.parse(localStorage.getItem("names"));
 
-if(myLeadsFromLocalStorage){
-    leads = myLeadsFromLocalStorage
-    renderLeads()
-}
+// if(myLeadsFromLocalStorage){
+//     leads = myLeadsFromLocalStorage;
+//     renderLeads();
+// }
 
-console.log(myLeadsFromLocalStorage)
+// console.log(myLeadsFromLocalStorage)
 
 save_btn_el.addEventListener("click",function(){
     leads.push(input_el.value)
@@ -21,6 +22,13 @@ save_btn_el.addEventListener("click",function(){
 
     localStorage.setItem("names",JSON.stringify(leads))
     input_el.value = ""
+})
+
+delete_el.addEventListener("dblclick",function(){
+    localStorage.clear()
+    leads = []
+    
+    renderLeads()
 })
 
 function renderLeads(){
