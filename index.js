@@ -25,12 +25,10 @@ save_btn_el.addEventListener("click",function(){
 
 tab_btn.addEventListener("click",function(){
 
-    chrome.tabs.query({active:true,currentwindow:true}, function(tabs){
-       
-       myleads.push(tabs[0].url)
-       localStorage.setItem("names",JSON.stringify(myleads))
-       renderLeads(myleads)
-
+    chrome.tabs.query({ active: true, currentWindow: true },function(tabs){
+        myleads.push(tabs[0].url)
+        localStorage.setItem("names",JSON.stringify(myleads))
+        renderLeads(myleads)
     })
     
 })
