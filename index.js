@@ -2,36 +2,45 @@
 const save_btn_el = document.getElementById("input-btn");
 
 const input_el = document.getElementById("input-el");
-let leads = []
+let myleads = []
 
 const ul_el = document.getElementById("unorderlist-el");
 const delete_el = document.getElementById("delete-btn");
+const tab_btn = document.getElementById("tab-btn");
 
- const myLeadsFromLocalStorage = JSON.parse(localStorage.getItem("names"));
+const myLeadsFromLocalStorage = JSON.parse(localStorage.getItem("names"));
 
-// if(myLeadsFromLocalStorage){
-//     leads = myLeadsFromLocalStorage;
-//     renderLeads();
-// }
+const tabs = [
+    {url:"https://google.com"}
+]
 
-// console.log(myLeadsFromLocalStorage)
+if(myLeadsFromLocalStorage){
+    myleads = myLeadsFromLocalStorage;
+    renderLeads(myleads);
+}
 
 save_btn_el.addEventListener("click",function(){
-    leads.push(input_el.value)
-    renderLeads()
+    myleads.push(input_el.value)
+    renderLeads(myleads)
 
-    localStorage.setItem("names",JSON.stringify(leads))
+    localStorage.setItem("names",JSON.stringify(myleads))
     input_el.value = ""
+})
+
+tab_btn.addEventListener("click",function(){
+    myleads.push(tabs[0].url)
+    localStorage.setItem("names",JSON.stringify(myleads))
+    renderLeads(myleads)
 })
 
 delete_el.addEventListener("dblclick",function(){
     localStorage.clear()
-    leads = []
+    myleads = []
     
-    renderLeads()
+    renderLeads(myleads)
 })
 
-function renderLeads(){
+function renderLeads(leads){
     let listItems = ""
 
     for(let i=0;i<leads.length;i++){

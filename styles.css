@@ -7,8 +7,8 @@ body{
 
 .btn{
     display:flex;
-    align-items: start;
-    justify-content: start;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #input-el{
@@ -27,11 +27,23 @@ body{
   color:aliceblue;
   border:0px;
   border-radius: 6px;
+  margin:10px 10px 10px 10px;
+}
 
+#tab-btn{
+  margin-top: 10px;
+  width:200px;
+  font-size:20px;
+  font-weight: bold;
+  padding:10px 20px 10px 20px;
+  background: #5f9341;
+  color:aliceblue;
+  border:0px;
+  border-radius: 6px;
+  margin:10px 10px 10px 10px;
 }
 
 #delete-btn{
-  margin-top: 10px;
   width:200px;
   font-size:20px;
   font-weight: bold;
@@ -40,7 +52,7 @@ body{
   color:#5f9341;
   border:1px solid #5f9341;
   border-radius: 6px;
-  margin-left:10px;
+  margin:10px 10px 10px 10px;
 }
 
 
